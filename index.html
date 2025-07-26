@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Volume Estimator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('{{ url_for('static', filename="C:\Users\sai dhiraj kumar\TrafficProject\static\traffic.jpg.jpg".) }}');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        input[type="text"], input[type="number"], input[type="time"], input[type="date"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #00cc99;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00b386;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>🚦 Traffic Volume Prediction</h1>
+        <form action="/predict" method="POST">
+            <input type="date" name="date" required><br>
+            <input type="time" name="time" required><br>
+            <input type="number" name="temperature" step="0.1" placeholder="Temperature (°C)" required><br>
+            <input type="submit" value="Predict Volume">
+        </form>
+    </div>
+</body>
+</html>

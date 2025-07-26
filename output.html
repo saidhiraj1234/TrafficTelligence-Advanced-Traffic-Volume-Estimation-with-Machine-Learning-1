@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Volume Estimation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('{{ url_for('static', filename='') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+            padding: 50px;
+            margin-top: 10%;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        h1, h2, h3 {
+            margin: 20px 0;
+        }
+
+        span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚦 Traffic Volume Estimation</h1>
+        <h2>Estimated Traffic Volume: <span style="color: #00ff99;">{{ prediction }}</span></h2>
+        <h3>📊 Prediction Accuracy: <span style="color: #ffcc00;">{{ accuracy }}%</span></h3>
+    </div>
+</body>
+</html>
